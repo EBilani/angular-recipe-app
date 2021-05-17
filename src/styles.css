@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+ @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* SnackBar */
+.blue-snackbar{
+    background-color: #673ab7  !important;
+    text-align: center !important;
+    color: white;
+}
+.example-full-width{
+    width: 100%;
+    padding: 0 30px;
+}
+/* position in center  */
+.spinner{
+    margin: 0 auto;
+  }
+.notification-snackbar{
+    background-color: #ffd740 !important;
+    color: black;
+    text-align: center !important;
+}
+.custom-modalbox .mat-dialog-container{
+   overflow: hidden;
+   background-color: #673ab7;
+}

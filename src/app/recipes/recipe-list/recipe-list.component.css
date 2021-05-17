@@ -1,0 +1,47 @@
+#mySearchField .form-control {
+  border-radius: 0;
+  width: 50%;
+}
+#mySearchField .my-search {
+  background-color: #ffd740;
+  margin-bottom: 0;
+  padding: 4px;
+  border: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+#mySearchField .my-search:active {
+  border: 1px solid #673ab7;
+}
+@media only screen and (max-width: 500px) {
+  .header {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 990px) {
+  #mySearchField .form-control {
+    width: 100% !important;
+  }
+}
+#mySearchField {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  
+  .table-column {
+    min-width: 200px;
+  }
+}
+.recipe-table {
+  display: block;
+  width: 100%;
+ overflow: auto;
+}
+.updatedEl{
+  border: 1px solid red;
+}
+#mat-dialog-container {
+  overflow: hidden !important;
+}

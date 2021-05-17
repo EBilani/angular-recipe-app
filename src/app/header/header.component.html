@@ -1,0 +1,22 @@
+  <nav class="navbar"  style="background-color:#673ab7">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed" color="accent">
+              <span class="icon-bar" *ngFor="let iconBar of [1, 2, 3]"></span>
+            </button>
+            <a style="font-size: 20px; font-family: 'Original Surfer', cursive;" color="accent" *ngIf="isAuthenticated"  type="text" mat-button>My Recipes App</a>
+            <a style="font-size: 20px;  font-family: 'Original Surfer', cursive;"  color="accent" *ngIf="!isAuthenticated"  type="button" mat-button routerLink="/recipes">Home</a>
+          </div>
+      <div class="navbar-collapse" [class.collapse]="collapsed"  (window:resize)="collapsed = true">
+        <div class="nav navbar-nav">
+            <a mat-button routerLink="recipes/add" *ngIf="!isAuthenticated"  type="button">New Recipe</a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <a mat-button routerLink="/register" *ngIf="isAuthenticated"  type="button">Register</a>
+            <a mat-button routerLink="/login" *ngIf="isAuthenticated"   type="button">Login</a>
+            <a mat-button routerLink="/login" *ngIf="!isAuthenticated"  type="button" (click)="onLogout()">Logout {{  loggedUserName}}</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  

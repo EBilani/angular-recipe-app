@@ -1,0 +1,64 @@
+<div class="row" style="margin-bottom: 30px">
+    <div class="col-md-8 col-md-offset-2">
+      <label
+        style="
+          font-size: 20px;
+          font-family: 'Original Surfer', cursive;
+          color: #673ab7;">Editing a Recipe!</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="container-fluid">
+      <div class="col-md-8 col-md-offset-2">
+        <mat-card>
+          <form [formGroup]= "editedForm" (ngSubmit)= "onUpdate()">
+            <mat-form-field class="example-full-width">
+              <mat-label>Name</mat-label>
+              <input matInput formControlName="name"  />
+              <mat-icon matSuffix>label</mat-icon>
+              <mat-error  *ngIf = "editedForm.get('name').errors?.required">This field is required!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+              <mat-icon matSuffix>description</mat-icon>
+              <mat-error  *ngIf = "editedForm.get('description').errors?.required">This field is required!</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <mat-label>Image URL</mat-label>
+              <input  matInput type="text" id="imageUrl" formControlName= "imageUrl" #imageUrl />
+              <mat-icon matSuffix>image</mat-icon>
+            </mat-form-field>
+            <div class="example-full-width" formArrayName = "ingrediends">
+              <div style="display: flex;  flex-wrap: wrap;"  class="row" *ngFor="let ingredient of editedForm.get('ingrediends')['controls']; let i= index; " [formGroupName] = "i" >
+                <mat-form-field class="col-md-4">
+                  <mat-label>Ingredient Name</mat-label>
+                  <input type="text" matInput formControlName ="name"/>
+                </mat-form-field>
+                <mat-form-field class="col-md-4">
+                  <mat-label>Amount</mat-label>
+                  <input type="number" matInput  formControlName ="amount"/>
+                </mat-form-field>
+                <div class="col-md-4"> 
+                  <button mat-raised-button color="accent" (click)="onDeleteIngrediends(i)" type="button">X</button>
+                </div>
+              </div>
+              <button style="margin-top: 20px;"  type="button" mat-raised-button color="primary" (click)="onAddIngredients()">Add Ingredient</button>
+            </div>
+            <div class="example-full-width" >
+              <div style="display: flex; justify-content: flex-end; margin-top: 20px;">
+                  <button style="margin-right: 10px;"  type="submit" mat-raised-button color="primary">Update</button>
+                  <button mat-raised-button color="accent" type="button" routerLink="../">Cancel</button>
+                </div>
+            </div>
+          </form>
+          <div *ngIf="isLoadingResults"  class="tbl-spinner">
+            <mat-progress-spinner class="spinner" color="primary" [diameter]="50" mode="indeterminate">
+            </mat-progress-spinner>
+        </div>
+        </mat-card>
+        <img style="width: 20%;" [src]="imageUrl.value" class="img-responsive" />
+      </div>
+    </div>
+  </div>
+  

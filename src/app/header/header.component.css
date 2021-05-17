@@ -1,0 +1,37 @@
+.spacer {
+  flex: 1 1 auto;
+}
+a:hover {
+  color: white;
+}
+a {
+  color: white;
+}
+.navbar {
+  border-radius: 0;
+  border: 0;
+  padding: 10px;
+}
+.navbar-toggle {
+  background-color: #ffd740;
+}
+.icon-bar {
+  background-color: #673ab7;
+}
+.navbar-toggle:hover {
+  background-color: white;
+}
+.navbar-collapse.collapse {
+  opacity: 1;
+}
+@media (max-width: 768px) {
+  .navbar-collapse {
+    border-top: 1px solid #ffd740;
+  }
+}
+@media (max-width: 768px) {
+  .navbar-collapse {
+    visibility: visible;
+    transition: visibility 0s linear 0s, opacity 300ms;
+  }
+}
