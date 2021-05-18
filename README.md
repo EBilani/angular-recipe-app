@@ -1,6 +1,8 @@
 # TaskManager
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.7.
+# Generate node_modules
+Run `npm install` for a dev server.
 
 ## Development server
 
